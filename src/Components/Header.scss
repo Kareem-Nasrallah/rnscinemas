@@ -1,0 +1,30 @@
+
+@mixin flex ($justfy,$aline){
+    display: flex;
+    justify-content: $justfy;
+    align-items: $aline;
+}
+
+header{
+    width: 100vw;
+    background: #000;
+    position: absolute;
+    z-index: 2;
+    div{
+        @include flex(space-between, center);
+        max-width: 1350px;
+        margin: auto;
+        padding: 0 40px;
+
+    }
+    ul{
+        @include flex(center, center);
+        gap: 10px;
+        li>a{
+            color: #fff;
+        }
+    }
+    a>img{
+        width: 130px;
+    }
+}
