@@ -1,0 +1,35 @@
+#nowShowing {
+  width: 80vw;
+  margin: auto;
+  max-width: 1300px;
+  #showingMovies {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 20px;
+    > a {
+      width: 305px;
+      border-radius: 5px;
+      &:hover {
+        background: #0000a015;
+      }
+      img {
+        width: 100%;
+        border-radius: 5px;
+      }
+      > div {
+        padding: 0 10px;
+        h3 {
+          font-weight: normal;
+          margin: 10px 0;
+        }
+        p {
+          margin: 10px 0;
+          font-size: 0.9rem;
+          color: #00000088;
+        }
+      }
+    }
+  }
+}
