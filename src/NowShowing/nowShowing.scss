@@ -9,7 +9,7 @@
     align-items: center;
     gap: 20px;
     > a {
-      width: 305px;
+      width: 280px;
       border-radius: 5px;
       &:hover {
         background: #0000a015;
@@ -29,6 +29,15 @@
           font-size: 0.9rem;
           color: #00000088;
         }
+      }
+    }
+  }
+}
+@media (max-width: 1500px) {
+  #nowShowing {
+    #showingMovies {
+      > a {
+        width: 230px;
       }
     }
   }

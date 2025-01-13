@@ -12,6 +12,7 @@ type movies = {
   name: string;
   image: {
     medium: string;
+    original: string;
   };
 };
 
@@ -32,10 +33,8 @@ const SwiperCom:React.FC<{moviesImg: movies[]}> = ({moviesImg}) => {
           loop={true}
           navigation
           pagination={{ clickable: true }}
-          onSwiper={(swiper) => console.log(swiper)}
-          onSlideChange={() => console.log("slide change")}
         >
-          {moviesImg?.slice(0, 5).map((elImg) => (
+          {moviesImg?.slice(1, 6).map((elImg) => (
             <SwiperSlide key={elImg.id} className="swiperSlide">
               <div>
                 <div>
@@ -45,7 +44,7 @@ const SwiperCom:React.FC<{moviesImg: movies[]}> = ({moviesImg}) => {
                 </div>
                 <div
                 className="imgDev"
-                  style={{ backgroundImage: `url(${elImg.image.medium})` }}
+                  style={{ backgroundImage: `url(${elImg.image.original})` }}
                 ></div>
               </div>
             </SwiperSlide>

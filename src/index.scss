@@ -24,3 +24,14 @@ button {
   font-weight: 500;
   margin-bottom: 1rem;
 }
+
+@media (max-width: 1200px) {
+  * {
+    font-size: 95%;
+  }
+}
+@media (max-width: 780px) {
+  * {
+    font-size: 90%;
+  }
+}
