@@ -25,13 +25,34 @@ button {
   margin-bottom: 1rem;
 }
 
-@media (max-width: 1200px) {
-  * {
-    font-size: 95%;
+.sectionWidth{
+  width: 1300px;
+  margin: auto;
+}
+
+@media (max-width: 1400px) {
+  .sectionWidth{
+    width: 1100px;
   }
 }
-@media (max-width: 780px) {
-  * {
-    font-size: 90%;
+
+@media (max-width: 1200px) {
+  .sectionWidth{
+    width: 940px;
+  }
+}
+@media (max-width: 991px) {
+  .sectionWidth{
+    width: 700px;
+  }
+}
+@media (max-width: 768px) {
+  .sectionWidth{
+    width: 520px;
+  }
+}
+@media (max-width: 576px) {
+  .sectionWidth{
+    width: 97%;
   }
 }

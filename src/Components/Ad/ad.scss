@@ -1,6 +1,5 @@
 #ad{
-    width: 80vw;
-    height: 180px;
+    height: 170px;
     background: #00a9dd;
     margin: 1.5rem auto 1rem;
     max-width: 1300px;
@@ -10,4 +9,28 @@
     p{
         font-size: 2rem;
     }
+}
+
+@media (max-width: 1400px) {
+  #ad {
+    height: 140px;
+  }
+}
+
+@media (max-width: 1200px) {
+  #ad {
+    height: 120px;
+  }
+}
+
+@media (max-width: 768px) {
+  #ad {
+    height: 70px;
+  }
+}
+
+@media (max-width: 621px) {
+  #ad {
+    height: 250px;
+  }
 }

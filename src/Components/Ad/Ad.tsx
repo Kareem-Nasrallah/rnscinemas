@@ -2,7 +2,7 @@ import './ad.scss'
 
 const Ad = () => {
   return (
-    <div id='ad'><p>Here an Ad Image</p></div>
+    <div id='ad' className='sectionWidth'><p>Here an Ad Image</p></div>
   )
 }
 
