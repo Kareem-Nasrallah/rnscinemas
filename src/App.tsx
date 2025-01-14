@@ -5,6 +5,7 @@ import Ad from "./Components/Ad/Ad";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import NowShowing from './NowShowing/NowShowing'
+import Cinemas from "./Pages/Cinemas/Cinemas";
 
 function App() {
   const [moviesImg, setMoviesImg] = useState([]);
@@ -28,6 +29,7 @@ function App() {
       <SwiperCom moviesImg={moviesImg}/>
       <Ad />
       <NowShowing moviesImg={moviesImg}/>
+      <Cinemas/>
     </>
   );
 }

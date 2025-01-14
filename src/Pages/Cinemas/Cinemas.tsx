@@ -1,11 +1,67 @@
+import { useState } from "react";
+import "./cinemas.scss";
+import cinemasData from "./cinemasData.ts";
+
 const Cinemas = () => {
+  const [activeBtn, setActiveBtn] = useState("all");
+  const [city, setCity] = useState(cinemasData);
+
+  const handleBtnClick = (btn: string, arr: any) => {
+    setActiveBtn(btn);
+    setCity(arr);
+  };
+
+  const cairoCinemas = cinemasData.filter((cinema) => cinema.city === "Cairo");
+
+  const gizaCinemas = cinemasData.filter((cinema) => cinema.city === "Giza");
+
+  const alexCinemas = cinemasData.filter(
+    (cinema) => cinema.city === "Alexandria"
+  );
+
   return (
-    <div>
+    <div id="cinemas" className="container">
       <h2 className="sideTitle">Cinemas</h2>
-      <button>All</button>
-      <button>Cairo</button>
-      <button>Giza</button>
-      <button>Alexanderia</button>
+      <div id="buttonsList">
+        <button
+          className={`all ${activeBtn === "all" ? "activeBtn" : ""}`}
+          onClick={() => handleBtnClick("all", cinemasData)}
+        >
+          All
+        </button>
+        <button
+          className={`cairo ${activeBtn === "cairo" ? "activeBtn" : ""}`}
+          onClick={() => handleBtnClick("cairo", cairoCinemas)}
+        >
+          Cairo
+        </button>
+        <button
+          className={`giza ${activeBtn === "giza" ? "activeBtn" : ""}`}
+          onClick={() => handleBtnClick("giza", gizaCinemas)}
+        >
+          Giza
+        </button>
+        <button
+          className={`alexandria ${
+            activeBtn === "alexandria" ? "activeBtn" : ""
+          }`}
+          onClick={() => handleBtnClick("alexandria", alexCinemas)}
+        >
+          Alexandria
+        </button>
+      </div>
+      <div id="cinemasList">
+        {city.map((cinema) => (
+          <div key={cinema.id} className={"cinemaDiv " + cinema.city}>
+            <div>
+              <span>{cinema.location}</span>
+              <h3>{cinema.name}</h3>
+              <p>{cinema.categories.join(" - ")}</p>
+            </div>
+            <img src="cinemaCuted.jpg" />
+          </div>
+        ))}
+      </div>
     </div>
   );
 };

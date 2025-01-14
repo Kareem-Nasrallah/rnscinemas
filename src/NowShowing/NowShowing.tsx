@@ -11,7 +11,7 @@ type movies = {
 
 const NowShowing: React.FC<{ moviesImg: movies[] }> = ({ moviesImg }) => {
   return (
-    <div id="nowShowing" className="sectionWidth">
+    <div id="nowShowing" className="container">
       <h2 className="sideTitle">Now Showing</h2>
       <div id="showingMovies">
         {moviesImg.slice(0, 18).map((mo) => (

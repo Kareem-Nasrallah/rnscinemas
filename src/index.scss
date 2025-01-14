@@ -25,34 +25,43 @@ button {
   margin-bottom: 1rem;
 }
 
-.sectionWidth{
+.container {
   width: 1300px;
   margin: auto;
 }
 
 @media (max-width: 1400px) {
-  .sectionWidth{
+  .container {
     width: 1100px;
   }
 }
 
 @media (max-width: 1200px) {
-  .sectionWidth{
+  .container {
     width: 940px;
+  }
+  html{
+    font-size: 95%;
   }
 }
 @media (max-width: 991px) {
-  .sectionWidth{
+  .container {
     width: 700px;
   }
 }
 @media (max-width: 768px) {
-  .sectionWidth{
+  html{
+    font-size: 90%;
+  }
+  .container {
     width: 520px;
   }
 }
 @media (max-width: 576px) {
-  .sectionWidth{
+  html{
+    font-size: 85%;
+  }
+  .container {
     width: 97%;
   }
 }
