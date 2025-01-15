@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./cinemas.scss";
 import cinemasData from "./cinemasData.ts";
 
@@ -18,6 +18,10 @@ const Cinemas = () => {
   const alexCinemas = cinemasData.filter(
     (cinema) => cinema.city === "Alexandria"
   );
+
+  useEffect(()=>{
+
+  })
 
   return (
     <div id="cinemas" className="container">
@@ -52,14 +56,14 @@ const Cinemas = () => {
       </div>
       <div id="cinemasList">
         {city.map((cinema) => (
-          <div key={cinema.id} className={"cinemaDiv " + cinema.city}>
+          <a href="#" key={cinema.id} className={"cinemaDiv " + cinema.city}>
             <div>
               <span>{cinema.location}</span>
               <h3>{cinema.name}</h3>
               <p>{cinema.categories.join(" - ")}</p>
             </div>
             <img src="cinemaCuted.jpg" />
-          </div>
+          </a>
         ))}
       </div>
     </div>

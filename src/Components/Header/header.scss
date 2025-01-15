@@ -16,91 +16,79 @@ header {
     flex-direction: row;
     text-transform: uppercase;
     font-weight: 500;
+    @media (max-width: 992px) {
+      flex-direction: column;
+    }
     div {
       @include flex(space-between, center);
+      @media (max-width: 992px) {
+        width: 100%;
+      }
       .fa-solid {
         color: #fff;
         font-size: 1.5rem;
         display: none;
+        @media (max-width: 992px) {
+          display: block;
+        }
       }
       a > img {
         width: 126px;
         padding: 8px 0;
       }
     }
-    ul {
-      @include flex(center, center);
-      flex-direction: row;
-      transition: 0.5s;
-      gap: 10px;
-      text-align: center;
-      li {
-        font-size: 1rem;
-        a {
-          color: #fff;
-          padding: 5px;
-          &:hover {
-            color: #a02d8a;
-          }
-        }
-        > button {
-          background: transparent;
-          border: #fff solid 1px;
-          padding: 8px 0rem;
-          font-size: 0.9rem;
-          font-weight: 500;
-          color: #fff;
-          width: 140px;
-          i {
-            color: #fff;
-          }
-        }
-        > .arabic {
-          padding: 5px 0rem;
-          font-family: "IBM Plex Sans Arabic", serif;
-          font-size: 0.9rem;
-          margin-right: 0;
-        }
-      }
-    }
-  }
-}
-
-@media (max-width: 1200px) {
-  header {
-    * {
-      font-size: 90%;
-    }
-    > div > ul > li {
-      > button {
-        padding: 7px 0rem;
-        width: 120px;
-      }
-      > .arabic {
-        padding: 4px 0rem;
-      }
-    }
-  }
-}
-@media (max-width: 992px) {
-  header {
-    > div {
-      flex-direction: column;
-      div {
-        width: 100%;
-        .fa-solid {
-          display: block;
-        }
-      }
-      > menu {
+    menu {
+      @media (max-width: 992px) {
         width: 100%;
         padding-bottom: 20px;
-        > ul {
+      }
+      ul {
+        @include flex(center, center);
+        flex-direction: row;
+        transition: 0.5s;
+        gap: 10px;
+        text-align: center;
+        @media (max-width: 992px) {
           translate: -100% -70%;
           flex-direction: column;
           gap: 15px;
-          li {
+        }
+        li {
+          font-size: 1rem;
+          @media (max-width: 992px) {
             width: 100%;
+          }
+          a {
+            color: #fff;
+            padding: 5px;
+            &:hover {
+              color: #a02d8a;
+            }
+          }
+          > button {
+            background: transparent;
+            border: #fff solid 1px;
+            padding: 8px 0rem;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: #fff;
+            width: 140px;
+            i {
+              color: #fff;
+            }
+            @media (max-width: 1200px) {
+              padding: 7px 0rem;
+              width: 120px;
+            }
+          }
+          > .arabic {
+            padding: 5px 0rem;
+            font-family: "IBM Plex Sans Arabic", serif;
+            font-size: 0.9rem;
+            margin-right: 0;
+            @media (max-width: 1200px) {
+              padding: 4px 0rem;
+            }
           }
         }
       }

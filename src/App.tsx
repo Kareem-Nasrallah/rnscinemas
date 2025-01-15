@@ -6,6 +6,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import NowShowing from './NowShowing/NowShowing'
 import Cinemas from "./Pages/Cinemas/Cinemas";
+import Footer from "./Components/Footer/Footer";
 
 function App() {
   const [moviesImg, setMoviesImg] = useState([]);
@@ -30,6 +31,7 @@ function App() {
       <Ad />
       <NowShowing moviesImg={moviesImg}/>
       <Cinemas/>
+      <Footer/>
     </>
   );
 }

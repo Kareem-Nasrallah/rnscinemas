@@ -14,7 +14,7 @@ const NowShowing: React.FC<{ moviesImg: movies[] }> = ({ moviesImg }) => {
     <div id="nowShowing" className="container">
       <h2 className="sideTitle">Now Showing</h2>
       <div id="showingMovies">
-        {moviesImg.slice(0, 18).map((mo) => (
+        {moviesImg.slice(0, 19).map((mo) => (
           <a key={mo.id} href="#" title={mo.name}>
             <img src={mo.image.medium} alt={mo.name} />
             <div>

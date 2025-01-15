@@ -5,9 +5,20 @@
     justify-content: start;
     align-items: center;
     gap: 20px;
+
+    @media (max-width: 1200px) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    @media (max-width: 768px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @media (max-width: 576px) {
+      gap: 10px;
+    }
+
     > a {
       border-radius: 5px;
-      margin-bottom: 8px;
+      margin-bottom: 10px;
       box-shadow: 0 4px 0px 0px #00000011;
       &:hover {
         background: #0000a015;
@@ -28,29 +39,6 @@
           color: #00000088;
         }
       }
-    }
-  }
-}
-@media (max-width: 1200px) {
-  #nowShowing {
-    #showingMovies {
-      grid-template-columns: repeat(3, 1fr);
-    }
-  }
-}
-
-@media (max-width: 768px) {
-  #nowShowing {
-    #showingMovies {
-      grid-template-columns: repeat(2, 1fr);
-    }
-  }
-}
-
-@media (max-width: 576px) {
-  #nowShowing {
-    #showingMovies {
-      gap: 10px;
     }
   }
 }
