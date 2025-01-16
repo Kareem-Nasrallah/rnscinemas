@@ -1,39 +1,22 @@
-import SwiperCom from "./SwiperCom/SwiperCom";
-import "./App.css";
-import Header from "./Components/Header/Header";
-import Ad from "./Components/Ad/Ad";
-import axios from "axios";
-import { useEffect, useState } from "react";
-import NowShowing from './NowShowing/NowShowing'
-import Cinemas from "./Pages/Cinemas/Cinemas";
 import Footer from "./Components/Footer/Footer";
-
-function App() {
-  const [moviesImg, setMoviesImg] = useState([]);
-
-  const axiosFunc = async () => {
-    try {
-      const response = await axios.get("http://api.tvmaze.com/shows");
-      setMoviesImg(response.data);
-      console.log(response.data);
-    } catch (err) {
-      console.log(err);
-    }
-  };
-
-  useEffect(() => {
-    axiosFunc();
-  }, []);
+import Header from "./Components/Header/Header";
+import { Route, Routes } from "react-router-dom";
+import Home from "./Pages/Home/Home";
+import Cinemas from "./Pages/Cinemas/Cinemas";
+import ComingSoon from "./Pages/ComingSoon/ComingSoon";
+const App = () => {
   return (
     <>
-      <Header />
-      <SwiperCom moviesImg={moviesImg}/>
-      <Ad />
-      <NowShowing moviesImg={moviesImg}/>
-      <Cinemas/>
-      <Footer/>
+        <Header />
+
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/cinemas" element={<Cinemas/>} />
+          <Route path="/coming-soon" element={<ComingSoon/>} />
+        </Routes>
+        <Footer />
     </>
   );
-}
+};
 
 export default App;

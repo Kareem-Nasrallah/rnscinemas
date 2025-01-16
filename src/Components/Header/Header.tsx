@@ -1,26 +1,35 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./header.scss";
+import { Link, useLocation } from "react-router-dom";
 
 const Header = () => {
   const [opeanMenu, sitOpeanMenu] = useState(false);
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
-  onresize = () => {
-    setScreenWidth(window.innerWidth);
-    console.log(screenWidth);
-  };
+  const location = useLocation();
+
+  const isHomeTheme = location.pathname == "/";
+
+  useEffect(() => {
+    const handleResize = () => {
+      setScreenWidth(window.innerWidth);
+    };
+    addEventListener("resize", handleResize);
+
+    return () => {
+      removeEventListener("resize", handleResize);
+    };
+  });
 
   return (
-    <header>
+    <header className={isHomeTheme ? "HomeTheme" : ""}>
       <div className={opeanMenu ? "container" : "container maxHight"}>
         <div id="logoMenu">
           <a href="#">
-            <img src="./logo.png" />
+            <img src={isHomeTheme?"./logo.png":'./logo_dark_top.png'} />
           </a>
           <i
-            className={opeanMenu ? "fa-solid fa-xmark" : "fa-solid fa-bars"}
+            className={`fa-solid ${opeanMenu ? "fa-xmark" : "fa-bars"}`}
             onClick={() => {
-              console.log(opeanMenu);
-              console.log(screenWidth);
               sitOpeanMenu((pre) => !pre);
             }}
           ></i>
@@ -30,24 +39,26 @@ const Header = () => {
             className={!opeanMenu && screenWidth < 994 ? "" : "translateMenu"}
           >
             <li>
-              <a href="">now showing</a>
+              <Link to="/">now showing</Link>
             </li>
             <li>
-              <a href="">cinemas</a>
+              <Link to="/cinemas">cinemas</Link>
             </li>
             <li>
-              <a href="">coming soon</a>
+              <Link to="/coming-soon">coming soon</Link>
             </li>
             <li>
-              <a href="">contact</a>
+              <Link to="/contact">contact</Link>
             </li>
             <li>
-              <button>
+              <button className={isHomeTheme ? "HomeTheme" : ""}>
                 <i className="fa-regular fa-user"></i> {"  "} log in
               </button>
             </li>
             <li>
-              <button className="arabic">العربية</button>
+              <button className={`arabic ${isHomeTheme ? "HomeTheme" : ""}`}>
+                العربية
+              </button>
             </li>
           </ul>
         </menu>
