@@ -18,6 +18,14 @@ const Contact = () => {
     isHuman: false,
   });
 
+  const submitHandler = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+  }
+
+  const isHumanHandler = () => {
+    setForm((pre) => ({ ...form, isHuman: !pre.isHuman }));
+  };
+
   const formHandler = (
     e: React.ChangeEvent<
       HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement
@@ -50,7 +58,7 @@ const Contact = () => {
       <div className="form">
         <h2>Contact us</h2>
         <span>We are here to help! What do you need?</span>
-        <form>
+        <form onSubmit={submitHandler}>
           <select
             value={form.topicType}
             onChange={formHandler}
@@ -71,7 +79,7 @@ const Contact = () => {
             name="name"
             value={form.name}
             onChange={formHandler}
-            placeholder="Your Name"
+            placeholder="Your Name *"
           />
           <div>
             <input
@@ -79,37 +87,66 @@ const Contact = () => {
               name="email"
               value={form.email}
               onChange={formHandler}
-              placeholder="Your Email"
+              placeholder="Your Email *"
             />
             <input
               type="text"
               name="phone"
               value={form.phone}
               onChange={formHandler}
-              placeholder="Your Phone"
+              placeholder="Your Phone *"
             />
           </div>
+          {form.topicType == "Inquiries For Schools" ||
+          form.topicType == "Inquiries For Companies" ? (
+            <div>
+              <input
+                type="text"
+                name="email"
+                value={form.email}
+                onChange={formHandler}
+                placeholder={
+                  form.topicType == "Inquiries For Schools"
+                    ? "Name of School (Optional)"
+                    : "Name of Companie (Optional)"
+                }
+              />
+              <input
+                type="text"
+                name="phone"
+                value={form.phone}
+                onChange={formHandler}
+                placeholder={
+                  form.topicType == "Inquiries For Schools"
+                    ? "Number of Students (Optional)"
+                    : "Number of Employees (Optioal)"
+                }
+              />
+            </div>
+          ) : (
+            ""
+          )}
           <textarea
             name="message"
             value={form.message}
             onChange={formHandler}
             cols={30}
             rows={10}
-          ></textarea>
-          <div>
-            <input
-              type="checkbox"
-              name="isHuman"
-              checked={form.isHuman}
-              onChange={formHandler}
-            />
-            <span>I'm not a robot</span>
-            <div>
-              <img src="./ReCAPTCHA_icon.svg.png" />
-              <p>reCAPTCHA</p>
-              <p>Privacy - Terms</p>
+            placeholder="Type Your Message..."
+          />
+          <label htmlFor="isHuman" id="isHuman" onClick={isHumanHandler}>
+            <div id="checkDiv">
+              <input type="checkbox" name="isHuman" checked={form.isHuman} />
+              <span>I'm not a robot</span>
             </div>
-          </div>
+            <div id="checkText">
+              <img src="./ReCAPTCHA_icon.svg.png" />
+              <p>
+                reCAPTCHA <br />
+                Privacy - Terms
+              </p>
+            </div>
+          </label>
           <button type="submit">Send Message</button>
         </form>
       </div>

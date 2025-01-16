@@ -2,15 +2,16 @@
   display: flex;
   justify-content: center;
   align-items: start;
-  gap: 5px;
-  margin: 40px auto;
   @media (max-width: 992px) {
     flex-direction: column;
+    align-items: center;
   }
   .information,
   .form {
     width: 50%;
-    padding: 0 3%;
+    @media (max-width: 992px) {
+      width: 100%;
+    }
     h2 {
       font-size: 1.8rem;
       font-weight: 500;
@@ -20,6 +21,17 @@
     }
   }
   .information {
+    padding: 50px 115px;
+    border-right: solid 2px #55555522;
+    @media (max-width: 1400px) {
+      padding: 50px 65px;
+    }
+    @media (max-width: 1200px) {
+      padding: 50px 30px;
+    }
+    @media (max-width: 992px) {
+      padding: 50px 140px;
+    }
     * {
       margin: 10px 0;
     }
@@ -44,6 +56,7 @@
         font-weight: 500;
         font-size: 1.45rem !important;
         direction: rtl;
+        margin: 25px 0;
         a {
           font-size: 1.1rem;
           display: block;
@@ -55,34 +68,81 @@
   }
   .form {
     text-align: start;
+    padding: 50px;
     h2,
     span {
-      margin: 10px 0;
+      margin: 10px 0 18px;
     }
     form {
-      margin-top: 20px;
+      margin-top: 24px;
       display: flex;
       flex-direction: column;
       justify-content: start;
       align-items: start;
-      gap: 20px;
-      div {
+      gap: 18px;
+      > div {
+        width: 100%;
         display: flex;
-        justify-content: start;
-        align-items: start;
-        gap: 20px;
+        gap: 18px;
       }
       select,
       input,
       textarea {
-        padding: 10px;
+        padding: 16px;
+        font-size: 0.9rem;
         font-weight: 500;
         border: none;
-        background: #0000a015;
+        border-radius: 6px;
+        background: #5555a510;
         width: 100%;
-        &.halfCol {
-          width: 49%;
+      }
+      #isHuman {
+        width: 280px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: #eeeeee55;
+        border: #22222233 solid 1px;
+        div {
+          &#checkDiv {
+            width: 160px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            input {
+              width: fit-content;
+              width: 27px;
+              height: 27px;
+              outline: none;
+              margin: 0 10px;
+              box-shadow: 0 0 0px 2px #999999 inset;
+            }
+            span {
+              font-size: 0.9rem;
+            }
+          }
+          &#checkText {
+            margin-right: 5px;
+            padding: 5px 0;
+            p {
+              font-size: 0.6rem;
+              color: #333333af;
+            }
+          }
         }
+        img {
+          width: 50px;
+          height: auto;
+        }
+      }
+      button{
+        width: 50%;
+        margin: auto;
+        color: #fff;
+        font-size: 1rem;
+        padding: 10px;
+        text-transform: capitalize;
+        font-weight: 500;
       }
     }
   }
