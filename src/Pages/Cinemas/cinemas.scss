@@ -36,12 +36,18 @@
     }
 
     .cinemaDiv {
+      opacity: 0;
       display: block;
       margin: 4px 0;
       border-radius: 20px;
       margin-bottom: 8px;
       overflow: hidden;
       box-shadow: 0 2px 1px 0.5px #88888822;
+      transition: 0s !important;
+      &.apeare{
+        transition: opacity 1s !important;
+        opacity: 1;
+      }
       div {
         padding: 20px;
         span,

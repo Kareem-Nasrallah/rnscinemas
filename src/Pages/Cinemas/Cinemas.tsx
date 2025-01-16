@@ -5,6 +5,7 @@ import cinemasData from "./cinemasData.ts";
 const Cinemas = () => {
   const [activeBtn, setActiveBtn] = useState("all");
   const [city, setCity] = useState(cinemasData);
+  const [apeare, setApeare] = useState("");
 
   const handleBtnClick = (btn: string, arr: any) => {
     setActiveBtn(btn);
@@ -19,9 +20,12 @@ const Cinemas = () => {
     (cinema) => cinema.city === "Alexandria"
   );
 
-  useEffect(()=>{
-
-  })
+  useEffect(() => {
+    setTimeout(() => setApeare("apeare"), 300);
+    return () => {
+      setApeare("");
+    };
+  }, [city]);
 
   return (
     <div id="cinemas" className="container">
@@ -56,7 +60,11 @@ const Cinemas = () => {
       </div>
       <div id="cinemasList">
         {city.map((cinema) => (
-          <a href="#" key={cinema.id} className={"cinemaDiv " + cinema.city}>
+          <a
+            href="#"
+            key={cinema.id}
+            className={`cinemaDiv ${cinema.city} ${apeare}`}
+          >
             <div>
               <span>{cinema.location}</span>
               <h3>{cinema.name}</h3>
