@@ -10,7 +10,7 @@ function Home() {
 
   const axiosFunc = async () => {
     try {
-      const response = await axios.get("http://api.tvmaze.com/shows");
+      const response = await axios.get("https://api.tvmaze.com/shows");
       setMoviesImg(response.data);
       console.log(response.data);
     } catch (err) {
