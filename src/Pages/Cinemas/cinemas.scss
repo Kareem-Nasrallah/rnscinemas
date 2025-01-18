@@ -1,3 +1,4 @@
+@import "../../index.scss";
 #cinemas {
   padding: 10px;
   margin: 30px auto 50px;
@@ -15,19 +16,14 @@
         min-width: 90px;
       }
       &.activeBtn {
-        background: #a02d8a;
+        background: $mainColor;
         color: #fff;
         border-color: transparent;
       }
     }
   }
   #cinemasList {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    justify-content: start;
-    align-items: center;
-    gap: 20px;
-
+    @include grid(3);
     @media (max-width: 992px) {
       grid-template-columns: repeat(2, 1fr);
     }
@@ -44,7 +40,7 @@
       overflow: hidden;
       box-shadow: 0 2px 1px 0.5px #88888822;
       transition: 0s !important;
-      &.apeare{
+      &.apeare {
         transition: opacity 1s !important;
         opacity: 1;
       }

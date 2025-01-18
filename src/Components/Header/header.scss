@@ -1,8 +1,4 @@
-@mixin flex($justfy, $aline) {
-  display: flex;
-  justify-content: $justfy;
-  align-items: $aline;
-}
+@import "../../index.scss";
 
 header {
   width: 100%;
@@ -72,7 +68,7 @@ header {
           a {
             padding: 5px;
             &:hover {
-              color: #a02d8a;
+              color: $mainColor;
             }
           }
           > button {
@@ -80,6 +76,9 @@ header {
             border: #333 solid 1px;
             &.HomeTheme {
               border: #fff solid 1px;
+            }
+            &:hover {
+              background: $mainColor;
             }
             padding: 8px 0rem;
             font-size: 0.9rem;

@@ -1,11 +1,9 @@
+@import '../../index.scss';
+
 #nowShowing {
   #showingMovies {
     margin-bottom: 50px;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    justify-content: start;
-    align-items: center;
-    gap: 20px;
+    @include grid(4);
     @media (max-width: 1200px) {
       grid-template-columns: repeat(3, 1fr);
     }
@@ -24,14 +22,14 @@
       &:hover {
         background: #0000a015;
       }
-      .premiered{
+      .premiered {
         color: #fff;
-        background:#a02d8a;
+        background: $mainColor;
         position: absolute;
         right: 20px;
         top: 30px;
         padding: 10px;
-        font-size: .95rem;
+        font-size: 0.95rem;
         font-weight: 500;
         border-radius: 6px;
       }

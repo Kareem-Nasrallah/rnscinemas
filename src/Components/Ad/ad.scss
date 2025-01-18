@@ -1,11 +1,11 @@
+@import '../../index';
+
 #ad {
   height: 170px;
   background: #00a9dd;
   margin: 1.5rem auto 1rem;
   max-width: 1300px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  @include flex();
 
   @media (max-width: 1400px) {
     height: 140px;

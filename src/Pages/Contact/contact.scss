@@ -1,7 +1,7 @@
+@import "../../index.scss";
+
 #contact {
-  display: flex;
-  justify-content: center;
-  align-items: start;
+  @include flex(center, start);
   @media (max-width: 992px) {
     flex-direction: column;
     align-items: center;
@@ -39,11 +39,10 @@
       text-align: center;
     }
     div {
-      display: flex;
-      align-items: center;
+      @include flex(none, center);
       gap: 10px;
       i {
-        color: #a02d8a;
+        color: $mainColor;
         font-size: 2rem;
         position: relative;
         top: 5px;
@@ -61,13 +60,12 @@
           font-size: 1.1rem;
           display: block;
           width: fit-content;
-          color: #a02d8a;
+          color: $mainColor;
         }
       }
     }
   }
   .form {
-    text-align: start;
     padding: 50px;
     h2,
     span {
@@ -75,14 +73,12 @@
     }
     form {
       margin-top: 24px;
-      display: flex;
+      @include flex(start, start);
       flex-direction: column;
-      justify-content: start;
-      align-items: start;
       gap: 18px;
       > div {
         width: 100%;
-        display: flex;
+        @include flex(none, none);
         gap: 18px;
       }
       select,
@@ -98,17 +94,13 @@
       }
       #isHuman {
         width: 280px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+        @include flex(space-between, center);
         background: #eeeeee55;
         border: #22222233 solid 1px;
         div {
           &#checkDiv {
             width: 160px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            @include flex;
             input {
               width: fit-content;
               width: 27px;
@@ -135,7 +127,7 @@
           height: auto;
         }
       }
-      button{
+      button {
         width: 50%;
         margin: auto;
         color: #fff;

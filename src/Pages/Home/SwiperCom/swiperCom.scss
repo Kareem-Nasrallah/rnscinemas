@@ -1,3 +1,5 @@
+@import '../../../index.scss';
+
 #swiperDiv {
   #swiper {
     .swiperSlide {
@@ -31,7 +33,7 @@
           h3 {
             font-size: 3rem;
             margin: 15px 0;
-            text-shadow: 1px 2px 1px #a02d8a;
+            text-shadow: 1px 2px 1px $mainColor;
             font-weight: 500;
             color: #fff;
           }
@@ -41,7 +43,7 @@
             font-weight: 600;
             padding: 0.7rem 3.8rem;
             color: #fff;
-            @media (max-width:776px) {
+            @media (max-width: 776px) {
                 width: 100%;
             }
           }
