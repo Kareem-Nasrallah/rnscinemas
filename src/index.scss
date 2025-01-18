@@ -6,7 +6,7 @@
 }
 @mixin grid($cols){
   display: grid;
-  grid-template-columns: repeat(cols, 1fr);
+  grid-template-columns: repeat($cols, 1fr);
   justify-content: start;
   align-items: center;
   gap: 20px;
