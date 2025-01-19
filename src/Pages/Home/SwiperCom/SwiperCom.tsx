@@ -20,7 +20,7 @@ const SwiperCom:React.FC<{moviesImg: movies[]}> = ({moviesImg}) => {
 
   return (
     <>
-      <div id="swiperDiv" height="70%">
+      <div id="swiperDiv">
         <Swiper
           id="swiper"
           modules={[Autoplay, Navigation, Pagination, A11y]}
